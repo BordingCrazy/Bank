@@ -3,9 +3,9 @@ package ChallengeOne;
 public class bankAccount {
     private int AccountNumber;
     private double balance;
-    private string customerName;
-    private string email;
-    private string phoneNumber;
+    private String customerName;
+    private String email;
+    private String phoneNumber;
 
     public int getAccountNumber() {
         return this.AccountNumber;
@@ -13,13 +13,13 @@ public class bankAccount {
     public double getBalance() {
         return this.balance;
     }
-    public string getCustomerName() {
+    public String getCustomerName() {
         return this.customerName;
     }
-    public string getEmail() {
+    public String getEmail() {
         return this.email;
     }
-    public string getPhoneNumber() {
+    public String getPhoneNumber() {
         return this.phoneNumber;
     }
     public void setAccountNumber(int accountNumber) {
@@ -28,19 +28,25 @@ public class bankAccount {
     public void setBalance(double balance) {
         this.balance = balance;
     }
-    public void setCustomerName(string customerName) {
+    public void setCustomerName(String customerName) {
         this.customerName = customerName;
     }
-    public void setEmail(string email) {
+    public void setEmail(String email) {
         this.email = email;
     }
-    public void setPhoneNumber(string phoneNumber) {
+    public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
-    public static void incrementBalance() {
-
+    public void incrementBalance(double deposit) {
+        balance += deposit;
+        System.out.println("Your current balance is: " + balance);
     }
-    public static void decrementBalance() {
-        
+    public void decrementBalance(double withdraw) {
+        if(balance - withdraw > 0) {
+            balance -= withdraw;
+            System.out.println("Your current balance is: " + balance);
+        }else{
+            System.out.println("You cannot withdraw that amount. Withdraw amount greater than balance.");
+        }
     }
 }
