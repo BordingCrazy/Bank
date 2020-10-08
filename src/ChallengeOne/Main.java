@@ -78,13 +78,23 @@ public class Main {
             System.out.println("Okay...");
         }
 
-        sc.close();//close user input.
+        System.out.println("Phone number is: " + account.getPhoneNumber() + " and email is: " + account.getEmail());
 
         System.out.println("Welcome " + account.getCustomerName() + ", please type out which option you want...");
         System.out.println("WITHDRAW \nDEPOSIT \nBALANCE");
-        System.out.println("Please type withdraw to take out money or deposit to put in money.");
-
-        System.out.println("Phone number is: " + account.getPhoneNumber());
-
+        String handleMoney = sc.nextLine();
+        switch(handleMoney) {
+            case "WITHDRAW":
+                System.out.println("Type how much you would like to withdraw: ");
+                account.decrementBalance(sc.nextDouble());
+                break;
+            case "DEPOSIT":
+                System.out.println("Type how much you would like to deposit: ");
+                account.incrementBalance(sc.nextDouble());
+                break;
+            case "BALANCE":
+                System.out.println("Your current balance is: " + account.getBalance());
+        }
+        sc.close();//close user input.
     }
 }

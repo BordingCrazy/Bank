@@ -46,7 +46,7 @@ public class bankAccount {
             balance -= withdraw;
             System.out.println("Your current balance is: " + balance);
         }else{
-            System.out.println("You cannot withdraw that amount. Withdraw amount greater than balance.");
+            System.out.println("You cannot withdraw that amount. 'Withdraw' amount is greater than balance.");
         }
     }
 }
