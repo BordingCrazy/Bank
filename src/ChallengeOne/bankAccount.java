@@ -38,13 +38,13 @@ public class bankAccount {
         this.phoneNumber = phoneNumber;
     }
     public void incrementBalance(double deposit) {
-        balance += deposit;
-        System.out.println("Your current balance is: " + balance);
+        this.balance += deposit;
+        System.out.println("Your current balance is: " + this.balance);
     }
     public void decrementBalance(double withdraw) {
-        if(balance - withdraw > 0) {
-            balance -= withdraw;
-            System.out.println("Your current balance is: " + balance);
+        if(this.balance - withdraw > 0) {
+            this.balance -= withdraw;
+            System.out.println("Your current balance is: " + this.balance);
         }else{
             System.out.println("You cannot withdraw that amount. 'Withdraw' amount is greater than balance.");
         }
